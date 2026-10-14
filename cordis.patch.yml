@@ -1,0 +1,13 @@
+# dsh-deepseek-peak-pricing bundle patch
+#
+# One host row. The row name resolves from the profile's own node_modules, where
+# the package is installed — for a local checkout that is a `link:` dependency:
+#
+#   cd ~/.dsh/profiles/desktop
+#   pnpm add link:/path/to/deepseek-peak-pricing
+#
+# and the profile's package.json lists this package in `dsh.profile.bundles` so
+# this patch layer is applied. No other profile edit is needed.
+- insert:
+    - id: deepseek-peak-pricing
+      name: dsh-deepseek-peak-pricing

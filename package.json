@@ -1,0 +1,49 @@
+{
+  "name": "dsh-deepseek-peak-pricing",
+  "version": "0.1.0",
+  "description": "DeepSeek 峰谷价格显示插件：定时同步官方峰谷价格表，并在输入框工具行常驻徽标展示当前所处价格区间。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./parse": {
+      "default": "./lib/parse.js"
+    },
+    "./schedule": {
+      "default": "./lib/schedule.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build:fallback": "node scripts/build-fallback.mjs test/fixtures/pricing.zh.html --write"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "pricing"
+  ],
+  "license": "MIT",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ]
+}
